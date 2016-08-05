@@ -1,5 +1,7 @@
 CSS 2D image depth map effect for React.
 
+Website and documentation [alves.im/react-image-depth](http://alves.im/react-image-depth).
+
 ## Usage
 
 ```js
@@ -7,10 +9,6 @@ CSS 2D image depth map effect for React.
 	<img src={imgPath} />
 <ImageDepth>
 ```
-
-## Demo
-
-Website and documentation [alves.im/react-image-depth](http://alves.im/react-image-depth).
 
 ## Credits
 
