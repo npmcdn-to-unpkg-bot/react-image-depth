@@ -1,0 +1,21 @@
+a {
+	color: #2979FF;
+	border-color: #2979FF;
+}
+
+a:hover {
+	background-color: #2979FF;
+}
+
+pre {
+  border-color: #E0E0E0;
+}
+
+.hack code {
+  font-weight: normal;
+}
+
+.container {
+	margin-bottom: 40px;
+	max-width: 740px;
+}
