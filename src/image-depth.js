@@ -39,7 +39,7 @@ export default class ImageDepth extends Component {
     rotateY: PropTypes.number,
     /** z-axis rotation; by default there's no rotation on the z-axis */
     rotateZ: PropTypes.number,
-    /** */
+    /** Instensity in all axis */
     intensity: PropTypes.number
   }
 
@@ -52,16 +52,11 @@ export default class ImageDepth extends Component {
     rotateX: 2,
     rotateY: 2,
     rotateZ: 0,
-    intensity: 2
+    intensity: 2.25
   }
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      /** container offset */
-      offset: {},
-    };
 
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
@@ -70,13 +65,6 @@ export default class ImageDepth extends Component {
   componentDidMount() {
     const { container } = this;
     if (container) {
-
-      this.setState({
-        offset: {
-          width: container.offsetWidth,
-          height: container.offsetHeight
-        }
-      });
 
       container.addEventListener('mousemove', this.onMouseMove);
       container.addEventListener('mouseleave', this.onMouseLeave);
@@ -150,14 +138,14 @@ export default class ImageDepth extends Component {
 
   onMouseLeave(e) {
     const { inner } = this;
-    const { perspective } = this.props;
+    const { perspective, scale } = this.props;
 
     setTimeout(() => {
       inner.style.transform = `
         perspective(${perspective}px)
         translate3d(0,0,0)
         rotate3d(1,1,1,0deg)
-        scale(1.10)`;
+        scale(${scale})`;
     }, 60);
   }
 

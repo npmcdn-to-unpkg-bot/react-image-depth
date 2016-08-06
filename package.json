@@ -1,7 +1,7 @@
 {
   "name": "react-image-depth",
   "description": "CSS 2D image depth map effect for React",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/image-depth.js",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "javascript"
   ],
   "author": "Henrique Alves <henriquea@gmail.com> (http://alves.im)",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "http://alves.im/react-image-depth",
   "devDependencies": {
     "git-directory-deploy": "^1.5.0",
