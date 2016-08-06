@@ -6,13 +6,10 @@ const styles = {
     overflow: 'hidden'
   },
   inner: {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
     transitionProperty: 'all',
     transitionDuration: '1s',
     animationFillMode: 'backwards',
-    transitionTimingFunction: 'cubic-bezier(0.14, 0.52, 0.62, 0.91)',
-    overflow: 'hidden'
+    transitionTimingFunction: 'cubic-bezier(0.14, 0.52, 0.62, 0.91)'
   }
 }
 
