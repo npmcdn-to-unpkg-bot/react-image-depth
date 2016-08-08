@@ -1,10 +1,10 @@
 a {
-	color: #2979FF;
-	border-color: #2979FF;
+  color: #2979FF;
+  border-color: #2979FF;
 }
 
 a:hover {
-	background-color: #2979FF;
+  background-color: #2979FF;
 }
 
 pre {
@@ -16,6 +16,6 @@ pre {
 }
 
 .container {
-	margin-bottom: 40px;
-	max-width: 740px;
+  margin-bottom: 40px;
+  max-width: 740px;
 }
