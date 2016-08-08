@@ -1,7 +1,7 @@
 {
   "name": "react-image-depth",
   "description": "CSS 2D image depth map effect for React",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "src/image-depth.js",
   "repository": {
     "type": "git",
