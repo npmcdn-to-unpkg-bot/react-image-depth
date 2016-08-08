@@ -18,7 +18,7 @@ export default class ImageDepth extends Component {
   static propTypes = {
     /** */
     children: PropTypes.node.isRequired,
-    /** Scale of the inner container  */
+    /** Default scale of the inner container  */
     scale: PropTypes.number,
     /** Perspective :) */
     perspective: PropTypes.number,
@@ -36,7 +36,7 @@ export default class ImageDepth extends Component {
     rotateY: PropTypes.number,
     /** z-axis rotation; by default there's no rotation on the z-axis */
     rotateZ: PropTypes.number,
-    /** Instensity in all axis */
+    /** Instensity added to x, y and z axis */
     intensity: PropTypes.number
   }
 
@@ -123,10 +123,10 @@ export default class ImageDepth extends Component {
 
       inner.style.transform = `
         perspective(${perspective}px)
-        translate3d(${tX}px, ${tY}px,${tZ}px)
-        rotate3d(1,0,0,${rX}deg)
-        rotate3d(0,1,0,${rY}deg)
-        rotate3d(0,0,1,${rZ}deg)
+        translate3d(${tX}px, ${tY}px, ${tZ}px)
+        rotate3d(1, 0, 0, ${rX}deg)
+        rotate3d(0, 1, 0, ${rY}deg)
+        rotate3d(0, 0, 1, ${rZ}deg)
         scale(${scale})
       `;
 
@@ -140,8 +140,8 @@ export default class ImageDepth extends Component {
     setTimeout(() => {
       inner.style.transform = `
         perspective(${perspective}px)
-        translate3d(0,0,0)
-        rotate3d(1,1,1,0deg)
+        translate3d(0, 0, 0)
+        rotate3d(1, 1, 1, 0deg)
         scale(${scale})`;
     }, 60);
   }
