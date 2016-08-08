@@ -3,7 +3,13 @@ import React, { Component, PropTypes } from 'react';
 const styles = {
   container: {
     display: 'inline-block',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    userSelect: 'none',
+    webkitUserSelect: 'none',
+    mozUserSelect: 'none',
+    msUserSelect: 'none',
+    webkitTouchCallout: 'none',
+    webkitTapHighlightColor: 'rgba(0, 0, 0, 0)'
   },
   inner: {
     transitionProperty: 'all',
@@ -11,6 +17,10 @@ const styles = {
     animationFillMode: 'backwards',
     transitionTimingFunction: 'cubic-bezier(0.14, 0.52, 0.62, 0.91)'
   }
+}
+
+const hasTouchEvents = () => {
+  return 'ontouchstart' in window || window.DocumentTouch;
 }
 
 export default class ImageDepth extends Component {
@@ -62,9 +72,12 @@ export default class ImageDepth extends Component {
   componentDidMount() {
     const { container } = this;
     if (container) {
-
       container.addEventListener('mousemove', this.onMouseMove);
       container.addEventListener('mouseleave', this.onMouseLeave);
+      if (hasTouchEvents) {
+        container.addEventListener('touchmove', this.onMouseMove);
+        container.addEventListener('touchend', this.onMouseLeave);
+      }
     }
   }
 
@@ -73,6 +86,10 @@ export default class ImageDepth extends Component {
     if (container) {
       container.removeEventListener('mousemove', this.onMouseMove);
       container.removeEventListener('mouseleave', this.onMouseMove);
+      if (hasTouchEvents) {
+        container.removeEventListener('touchmove', this.onMouseMove);
+        container.removeEventListener('touchend', this.onMouseLeave);
+      }
     }
   }
 
@@ -147,6 +164,9 @@ export default class ImageDepth extends Component {
   }
 
   getMousePos(e) {
+    if (hasTouchEvents) {
+      console.log(e.originalEvent);
+    }
     let posx = 0;
     let posy = 0;
     if (e.pageX || e.pageY)   {
