@@ -9,6 +9,14 @@ const usage = `<ImageDepth>
 <ImageDepth>
 `;
 
+const img = {
+  src: 'https://scontent-lhr3-1.cdninstagram.com/t51.2885-15/e35/13130005_842779209199573_380049555_n.jpg',
+  author: {
+    name: 'Pedro Duarte',
+    url: 'https://www.instagram.com/p/BE7nPQHo9Gy/?taken-by=peduarte'
+  }
+};
+
 class Site extends Component {
   render() {
     return (
@@ -24,18 +32,20 @@ class Site extends Component {
         </pre>
         <h2>Demo</h2>
         <ImageDepth>
-          <img src="https://drscdn.500px.org/photo/388736/q%3D80_m%3D2000/1c9e8e3f880b12e9f18f6c55cbf5485c" width="100%" alt="" />
+          <img src={img.src} width="100%" alt="" />
         </ImageDepth>
         <p>
-          Photo by <a href="https://500px.com/photo/388736/oo-by-besim-mazhiqi">Besim Mazhiqi</a>
+          Photo by <a href={img.author.url}>{img.author.name}</a>
         </p>
         <h2>Credits</h2>
         <p>
-          Original script by the awesome <a href="http://tympanus.net/codrops/2015/05/28/image-tilt-effect/">Mary Lou</a>.
+          Original script by the awesome
+          <a href="http://tympanus.net/codrops/2015/05/28/image-tilt-effect/">Mary Lou</a>.
         </p>
         <h2>Questions</h2>
         <p>
-          Questions, comments or suggestion? <a href="https://github.com/henriquea/react-image-depth/issues/new?title=Question+title">Open an issue</a>.
+          Questions, comments or suggestion?
+          <a href="https://github.com/henriquea/react-image-depth/issues/new?title=Question+title">Open an issue</a>.
         </p>
       </div>
     );
